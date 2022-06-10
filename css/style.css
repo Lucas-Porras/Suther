@@ -1,21 +1,43 @@
+:root{
+    --AntiqueBGBottoms: #FFEEDD;
+    --ColorSinEspecificar2: #FFD8BE;
+    --Blancos: #f0f0f6;
+    --Contraste: #9381FF;
+    --ContrasteDropdowns: #8374d6;
+    --ContrasteNatural: #b8b8ff;
+    --ContrasteDivs: #A288E3;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.color-fondo{
-    width: 100%;
-    height: 100vh;
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);    
+.fondoPlaceH{
+    background-color: var(--Blancos);
 }
-nav{
-    background: rgb(115,108,238);
-    background: linear-gradient(90deg, rgba(115,108,238,1) 13%, rgba(221,120,220,1) 53%, rgba(146,148,213,1) 87%);
+.boton{
+    background-color: var(--AntiqueBGBottoms);
 }
-.otrobody{
-    height: 30em;
+.dropdown-menu{
+    background-color: var(--ContrasteDropdowns);
+}
+.texto-inicial{
+    background-color: var(--ContrasteDivs);
 }
 footer{
-    height: 66px;
+    background-color: var(--ContrasteDivs);
+}
+nav{
+    background-color: var(--Contraste);
+    border-bottom: 1.5px solid rgb(157, 150, 150);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--ContrasteNatural);
+}
+ion-icon{
+    margin-top: 5px;
+    font-size: 22px;
 }
