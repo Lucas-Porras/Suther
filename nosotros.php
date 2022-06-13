@@ -1,4 +1,7 @@
-<?php require_once "database/database.php" ?>
+<?php 
+  require_once "database/database.php";
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once "partials/header.php" ?>

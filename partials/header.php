@@ -25,16 +25,27 @@
             <a class="nav-link" href="nosotros.php">Nosotros</a>
           </li>
         </ul>
+        <?php if(isset($_SESSION['usuario'])) { ?>
+          <div class="d-flex">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="logout.php">Cerrar sesion</a>
+              </li>
+            </ul>
+          </div>
+        <?php } ?>
+        <?php if(!isset($_SESSION['usuario'])) { ?>
         <div class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="register.php">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Iniciar</a>
+                    <a class="nav-link" href="login.php">Loguear</a>
                 </li>
             </ul>
         </div>
+        <?php } ?>
         <!--<form class="d-flex" role="search">
           <button class="btn btn-success" type="submit"><ion-icon name="search-outline"></ion-icon></button>
         </form> Lo pondremos cuando ya este registrado y logueado-->

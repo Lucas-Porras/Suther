@@ -1,7 +1,31 @@
-<?php require_once "database/database.php" ?>
+<?php 
+
+require_once "database/database.php";
+
+$error = "";
+
+session_start();
+if(isset($_SESSION['usuario'])){
+    echo"<script> alert('Ya estas logueado!'); </script>";
+    header('Location: index.php');
+} // Lo creamos en caso de que ya este logueado y haya entrado de alguna manera al register.
+
+
+
+if(isset($_POST['registrarme']) > 0){
+    if(strlen($_POST['name']) > 1 && strlen($_POST['surname']) > 1 && strlen($_POST['username']) > 1 && strlen($_POST['email']) > 1 && strlen($_POST['password']) > 1){
+        $consultaRegistro = "INSERT INTO users (name, surname, email, username, password) values ('".$_POST['name']."','".$_POST['surname']."','".$_POST['username']."','".$_POST['email']."','".$_POST['password']."')";
+        $queryRegistro = mysqli_query($conexion, $consultaRegistro);
+    }
+    else{
+        echo "<script>alert('Complete todos los campos');</script>";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once "partials/header.php" ?>
+<?php require_once "partials/header.php"; ?>
 <body>
     <div>
         <div class="container mt-5">
@@ -23,6 +47,10 @@
                                 </div>
                             </div>
                             <div class="">
+                                <label class="fw-semibold form-label mt-1">Usuario</label>
+                                <input type="text" class="form-control" name="username">
+                            </div>
+                            <div class="">
                                 <label class="fw-semibold form-label mt-1">Email</label>
                                 <input type="email" class="form-control" name="email">
                             </div>
@@ -36,7 +64,7 @@
                             </div>
                             <hr style="w-50% text-center">
                             <div class="">
-                                <button type="submit" class="form-control mt-3 border border-primary" style="--bs-border-opacity: .3;" name="registrarme">Registrarme</button>
+                                <input type="submit" class="form-control mt-3 border border-primary" value="Registrarme!" style="--bs-border-opacity: .3;" name="registrarme"></input>
                             </div>
                         </div>
                     </form>
