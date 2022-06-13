@@ -4,17 +4,20 @@ require_once "database/database.php";
 
 session_start();
 
+if(isset($_SESSION['usuario'])){
+    header('Location: index.php');
+}
+
 if(isset($_POST['loguearme'])){
     $usuario = $_POST['email'];
     $contra = $_POST['password'];
-    $consultaLogin = "SELECT username, email FROM users WHERE username = '$usuario' OR email = '$usuario' AND password = '$contra'";
-    if(strlen($_POST['email']) > 1 && strlen($_POST['password']) > 1){
+    if(strlen($usuario) > 1 && strlen($contra) > 1){
+        $consultaLogin = "SELECT * FROM users WHERE email = '$usuario' OR username = '$usuario' AND password = '$contra'";
         $queryLogin = mysqli_query($conexion, $consultaLogin);
-        if($queryLogin){
+        if(1 == mysqli_num_rows($queryLogin)){
             $row = mysqli_fetch_assoc($queryLogin);
             $_SESSION['usuario'] = $row['username'];
-            echo "<script>alert('Logueado con exito');</script>";
-            header('Location: index.php');
+            echo "<script>alert('Logueado con exito')</script>";
         }
         else{
             echo "<script>alert('Ha ocurrido un error');</script>";
