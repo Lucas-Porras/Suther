@@ -1,43 +1,18 @@
-:root{
-    --AntiqueBGBottoms: #FFEEDD;
-    --ColorSinEspecificar2: #FFD8BE;
-    --Blancos: #f0f0f6;
-    --Contraste: #9381FF;
-    --ContrasteDropdowns: #8374d6;
-    --ContrasteNatural: #b8b8ff;
-    --ContrasteDivs: #A288E3;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.fondoPlaceH{
-    background-color: var(--Blancos);
-}
-.boton{
-    background-color: var(--AntiqueBGBottoms);
-}
-.dropdown-menu{
-    background-color: var(--ContrasteDropdowns);
-}
-.texto-inicial{
-    background-color: var(--ContrasteDivs);
-}
-footer{
-    background-color: var(--ContrasteDivs);
-}
 nav{
-    background-color: var(--Contraste);
-    border-bottom: 1.5px solid rgb(157, 150, 150);
+    background: #6969ea;
+    background: -webkit-linear-gradient(264deg, #6969ea 0%, #bc48ff 100%);
+    background: linear-gradient(264deg, #6969ea 0%, #bc48ff 100%);
+}
+/* Este va a ser el boton CSS
+
+
+
+*/
+.principal{
+    background: #6969ea;
+    background: -webkit-linear-gradient(264deg, #6969ea 0%, #bc48ff 100%);
+    background: linear-gradient(264deg, #6969ea 0%, #bc48ff 100%);
 }
 body{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--ContrasteNatural);
-}
-ion-icon{
-    margin-top: 5px;
-    font-size: 22px;
+    background-color: #b8b8ff;
 }
